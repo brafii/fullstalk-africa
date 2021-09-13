@@ -1,0 +1,134 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+    --default-color: #479025;
+    --body-font-color: gray;
+    --login-backgroundColor: #e5e5e5;
+    --login-buttonColor: #343a40;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.7;
+    color: var(--body-font-color);
+}
+.navbar-brand{
+    width: 350px;
+}
+.bg-light {
+    --bs-bg-opacity: 1;
+    /* background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; */
+    /* padding: 0; */
+}
+.body-title h1{
+    color: var(--default-color);
+    font-size: 40px;
+    font-weight: 900;
+}
+.food-crop1 h2{
+    color: var(--default-color);
+    font-size: 40px;
+    font-weight: 900;
+}
+.food-crop1 p{
+    font-size: 1em;
+    font-weight: 300;
+}
+.c-name{
+    color: var(--default-color);
+}
+.card{
+    border: 1px solid #eee;
+    border-left: 10px solid var(--default-color);
+}
+.card-title img{
+    width: 50px;
+    height: 50px;
+}
+.footer i{
+    font-size: .9em;
+    margin: 15px;
+}
+
+/* Login Page Stylesheet */
+.login-page{
+    background-color: var(--login-backgroundColor);
+}
+.login-button{
+    background-color: #fff;
+}
+.login-button{
+    width: 45%;
+    margin: auto;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login-button label{
+    color: #666;
+}
+.myLogin-button{
+    background-color: var(--login-buttonColor);
+    border-color: var(--login-buttonColor);
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 500;
+}
+.login-button img{
+    display: block;
+    margin: auto;
+    margin-top: -40px;
+    max-width: 65%;
+    height: auto;
+    /* height: 150px; */
+}
+.form-info p{
+    color: #666;
+}
+.form-info a{
+    text-decoration: none;
+    color: #ff2e44;
+}
+.form-info .last{
+    margin-bottom: -35px;
+}
+input[type='text'], input[type='password']{
+    padding: 10px;
+}
+
+/* Signup Page */
+.register-page{
+    width: 43%;
+    margin: auto;
+    margin-top: 55px;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #666;
+}
+.register-page img{
+    display: block;
+    margin: auto;
+    margin-top: -40px;
+    max-width: 60%;
+    height: auto;
+}
+.myRegister-button{
+    background-color: #63c76a;
+    border-color: #63c76a;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 500;
+}
+.myRegister-button:hover{
+    background-color: #63c76a;
+    border-color: #63c76a;
+}
+.register-footer{
+    background-color: #fff;
+    margin-top: 60px;
+}
