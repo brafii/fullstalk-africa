@@ -21,6 +21,13 @@ body{
     /* background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; */
     /* padding: 0; */
 }
+.stalk-wallpaper1{
+    width: 100%;
+    background-image: url('../images/bga.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding: 30px 0 50px; */
+}
 .body-title h1{
     color: var(--default-color);
     font-size: 40px;
