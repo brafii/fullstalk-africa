@@ -18,16 +18,18 @@ body{
 }
 .bg-light {
     --bs-bg-opacity: 1;
+    background-color: #fff !important;
     /* background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; */
     /* padding: 0; */
 }
-.stalk-wallpaper1{
+/* .stalk-wallpaper{
     width: 100%;
     background-image: url('../images/bga.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right 30px center;
     padding: 130px;
-}
+} */
 .body-title h1{
     color: var(--default-color);
     font-size: 40px;
