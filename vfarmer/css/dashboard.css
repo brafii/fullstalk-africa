@@ -7,6 +7,10 @@
     --login-backgroundColor: #e5e5e5;
     --login-buttonColor: #343a40;
     --dashboard-content-color: #f7f7f7;
+    --card-green: #00b26f;
+    --card-orange: #ff8300;
+    --card-blue: #00b5e9;
+    --card-red: #fa4251;
 }
 
 body{
