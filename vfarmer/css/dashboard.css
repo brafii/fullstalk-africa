@@ -1,0 +1,14 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+    --default-color: #479025;
+    --body-font-color: gray;
+    --login-backgroundColor: #e5e5e5;
+    --login-buttonColor: #343a40;
+    --dashboard-content-color: #f7f7f7;
+}
+
+.full-content-section{
+    background-color: var(--dashboard-content-color);
+}
