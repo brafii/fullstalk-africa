@@ -9,6 +9,13 @@
     --dashboard-content-color: #f7f7f7;
 }
 
+body{
+    color: #393939;
+}
+
 .full-content-section{
     background-color: var(--dashboard-content-color);
+}
+.display-name{
+    margin-top: 80px;
 }
