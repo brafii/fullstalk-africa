@@ -23,3 +23,24 @@ body{
 .display-name{
     margin-top: 80px;
 }
+
+.card1{
+    background-color: var(--card-green);
+    color: #fff;
+    border: 0;
+}
+.card2{
+    background-color: var(--card-orange);
+    color: #fff;
+    border: 0;
+}
+.card3{
+    background-color: var(--card-blue);
+    color: #fff;
+    border: 0;
+}
+.card4{
+    background-color: var(--card-red);
+    color: #fff;
+    border: 0;
+}
