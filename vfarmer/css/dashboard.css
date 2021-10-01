@@ -63,3 +63,7 @@ body{
     color: #fff;
     border: 0;
 }
+.farmbutton a{
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+}
