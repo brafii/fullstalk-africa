@@ -116,3 +116,12 @@ input[type="checkbox"]{
     width: 45%;
     margin: auto;
 }
+.foodcrops h3{
+    color: #333333;
+    font-weight: 700;
+}
+.foodcrops h4{
+    font-size: 18px;
+    color: #333333;
+    font-weight: 700;
+}
