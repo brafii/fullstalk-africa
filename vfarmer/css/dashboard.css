@@ -35,6 +35,9 @@ body{
 .navbar-light .navbar-nav .nav-link:hover{
     color: #007bff;
 }
+.my-image{
+    width: 55px;
+}
 .full-content-section{
     background-color: var(--dashboard-content-color);
     margin-bottom: 80px;
