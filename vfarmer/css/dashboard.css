@@ -125,3 +125,17 @@ input[type="checkbox"]{
     color: #333333;
     font-weight: 700;
 }
+.foodcrops p{
+    font-size: 1.1em;
+    line-height: 1.625;
+    color: #666;
+}
+.units{
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    font-size: 1.1em;
+}
+.addfarm-footer p{
+    color: #666;
+}
