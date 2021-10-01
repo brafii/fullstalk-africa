@@ -81,5 +81,5 @@ body{
     font-weight: 600;
 }
 input[type="checkbox"]{
-    
+    padding: 8px;
 }
