@@ -38,6 +38,9 @@ body{
 .my-image{
     width: 55px;
 }
+.imagedropdown a:hover{
+    color: #fff !important;
+}
 .full-content-section{
     background-color: var(--dashboard-content-color);
     margin-bottom: 80px;
