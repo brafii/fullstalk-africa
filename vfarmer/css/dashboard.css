@@ -90,7 +90,7 @@ input[type="checkbox"]{
 .table tbody td {
     font-size: 15px;
     color: #808080;
-    padding: 25px 40px;
+    padding: 35px 40px;
     border: none;
 }
 .table tbody .total-units{
