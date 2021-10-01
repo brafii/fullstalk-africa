@@ -73,3 +73,13 @@ body{
 .farmbutton i{
     font-size: 14px;
 }
+.table thead tr th{
+    font-size: 13px;
+    color: #555;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+}
+input[type="checkbox"]{
+    
+}
