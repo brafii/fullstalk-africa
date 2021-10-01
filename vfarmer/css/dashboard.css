@@ -73,6 +73,10 @@ body{
 .farmbutton i{
     font-size: 14px;
 }
+table{
+    border-collapse:separate; 
+    border-spacing: 0 1em;
+}
 .table thead tr th{
     font-size: 13px;
     color: #555;
@@ -101,3 +105,8 @@ input[type="checkbox"]{
 .table tbody .status{
     color: var(--default-color);
 }
+/* tr.give-space td{
+    border-top: 10px solid; 
+    border-bottom: 10px solid;
+    border-color: #fff;
+} */
