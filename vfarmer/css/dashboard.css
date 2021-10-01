@@ -19,6 +19,9 @@ body{
     background: #e5e5e5;
     color: #393939;
 }
+.navbar-brand img{
+    width: 250px;
+}   
 
 .full-content-section{
     background-color: var(--dashboard-content-color);
