@@ -15,6 +15,7 @@
 }
 
 body{
+    font-family: "Poppins", sans-serif;
     background: #e5e5e5;
     color: #393939;
 }
@@ -107,8 +108,7 @@ input[type="checkbox"]{
 .table tbody .status{
     color: var(--default-color);
 }
-/* tr.give-space td{
-    border-top: 10px solid; 
-    border-bottom: 10px solid;
-    border-color: #fff;
-} */
+.dashboard-footer p{
+    font-size: 16px;
+    color: #666;
+}
