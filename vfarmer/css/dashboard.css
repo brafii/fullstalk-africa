@@ -68,7 +68,7 @@ body{
     border-color: var(--button-color);
     font-weight: 400;
     font-size: 14px;
-    padding: 0 40px;
+    padding: 8px 20px;
 }
 .farmbutton i{
     font-size: 14px;
