@@ -77,9 +77,19 @@ body{
     font-size: 13px;
     color: #555;
     text-transform: uppercase;
+    padding: 25px 40px;
     border: none;
     font-weight: 600;
 }
 input[type="checkbox"]{
     padding: 8px;
+}
+.table tbody{
+    background-color: white;
+}
+.table tbody td {
+    font-size: 14px;
+    color: #808080;
+    padding: 25px 40px;
+    border: none;
 }
