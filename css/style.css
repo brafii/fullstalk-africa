@@ -58,6 +58,19 @@ body::before{
     background-position: right 30px center;
     padding: 130px;
 } */
+.stalk-content h1{
+    color: var(--default-color);
+    font-size: 3.8rem;
+    font-weight: 600;
+}
+.stalk-content p{
+    color: #6c757d;
+}
+.stalk-content .btn-primary{
+    background-color: var(--default-color);
+    color: #fff;
+    letter-spacing: .1em;
+}
 .body-title h1{
     color: var(--default-color);
     font-size: 40px;
