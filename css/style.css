@@ -12,6 +12,7 @@ body{
     font-family: 'Nunito', sans-serif;
     line-height: 1.7;
     color: var(--body-font-color);
+    overflow-x: hidden;
 }
 body::before{
     display: block;
