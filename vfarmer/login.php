@@ -31,7 +31,7 @@
 
             <div class="form-info text-center">
                 <div class="container"> 
-                    <p class="mt-5 mb-1">Need an Account? <span><a href="register.html">Sign Up</a></span></p>
+                    <p class="mt-5 mb-1">Need an Account? <span><a href="register.php">Sign Up</a></span></p>
                     <p class="last">Go Home <span><a href="../index.html">Here</a></span></p>
                 </div>
             </div>
