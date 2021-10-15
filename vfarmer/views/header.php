@@ -11,7 +11,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>&nbsp; Dashboard</a>
+              <a class="nav-link" href="dashboard.php"><i class="fas fa-tachometer-alt"></i>&nbsp; Dashboard</a>
             </li>
             
             <li class="nav-item dropdown">
