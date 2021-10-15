@@ -135,7 +135,7 @@
 
             <!-- Farm button -->
             <div class="farmbutton text-end">
-              <a class="btn btn-primary mt-5" href="addfarmer.html" role="button"><i class="fas fa-plus"></i> ADD FARM</a>
+              <a class="btn btn-primary mt-5" href="addfarmer.php" role="button"><i class="fas fa-plus"></i> ADD FARM</a>
             </div>
             <!-- End Farm button -->
 
