@@ -25,7 +25,7 @@
                   <label class="form-label">Password</label>
                   <input type="password" class="form-control" placeholder="Password">
                 </div>
-                <a class="btn btn-primary myLogin-button" href="dashboard.html" role="button">Sign In</a>
+                <a class="btn btn-primary myLogin-button" href="dashboard.php" role="button">Sign In</a>
                 <!-- <button type="submit" class="btn btn-primary myLogin-button">Sign In</button> -->
             </form>
 
