@@ -110,7 +110,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" name="fullname" placeholder="Fullname">
+                    <input type="text" class="form-control" name="fullname" value="<?php echo $fullname ?>" placeholder="Fullname">
                     <div class="text-danger mt-1">
                         <?php echo $errors['fullname']; ?>
                     </div>
@@ -118,7 +118,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Email Address</label>
-                    <input type="text" class="form-control" name="email" placeholder="Email">
+                    <input type="text" class="form-control" name="email" value="<?php echo $email ?>" placeholder="Email">
                     <div class="text-danger mt-1">
                         <?php echo $errors['email']; ?>
                     </div>
@@ -134,7 +134,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Country</label>
-                    <input type="text" class="form-control" name="country" placeholder="Country">
+                    <input type="text" class="form-control" name="country" value="<?php echo $country ?>" placeholder="Country">
                     <div class="text-danger mt-1">
                         <?php echo $errors['country']; ?>
                     </div>
@@ -142,7 +142,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">City</label>
-                    <input type="text" class="form-control" name="city" placeholder="City">
+                    <input type="text" class="form-control" name="city" value="<?php echo $city ?>" placeholder="City">
                     <div class="text-danger mt-1">
                         <?php echo $errors['city']; ?>
                     </div>
@@ -150,7 +150,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Contact</label>
-                    <input type="text" class="form-control" name="contact" placeholder="Contact">
+                    <input type="text" class="form-control" name="contact" value="<?php echo $contact ?>" placeholder="Contact">
                     <div class="text-danger mt-1">
                         <?php echo $errors['contact']; ?>
                     </div>
@@ -158,7 +158,7 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Address</label>
-                    <input type="text" class="form-control" name="address" placeholder="Address">
+                    <input type="text" class="form-control" name="address" value="<?php echo $address ?>" placeholder="Address">
                     <div class="text-danger mt-1">
                         <?php echo $errors['address']; ?>
                     </div>
