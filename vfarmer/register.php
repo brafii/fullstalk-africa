@@ -1,3 +1,9 @@
+<?php
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,50 +22,50 @@
     <div class="register-page">
         <div class="container p-5">
             <img src="images/logo.png" class="img-fluid">
-            <form action="" method="">
+            <form action="register.php" method="POST">
                 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" name="profile" type="file" id="formFile">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" placeholder="Full Name">
+                    <input type="text" class="form-control" name="fullname" placeholder="Full Name">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Email Address</label>
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
                 </div>
                 
                 <div class="mb-3">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control" placeholder="Password">
+                  <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Country</label>
-                    <input type="text" class="form-control" placeholder="Country">
+                    <input type="text" class="form-control" name="country" placeholder="Country">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">City</label>
-                    <input type="text" class="form-control" placeholder="City">
+                    <input type="text" class="form-control" name="city" placeholder="City">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Contact</label>
-                    <input type="text" class="form-control" placeholder="Contact">
+                    <input type="text" class="form-control" name="contact" placeholder="Contact">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Address</label>
-                    <input type="text" class="form-control" placeholder="Address">
+                    <input type="text" class="form-control" name="address" placeholder="Address">
                 </div>
 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" name="terms" class="form-check-input">
                     <label class="form-check-label">Agree the terms and policy</label>
                 </div>
                 
