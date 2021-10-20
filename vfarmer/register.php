@@ -78,6 +78,9 @@
         //check no more errors
         if(!array_filter($errors)){
 
+            //hash password
+            $password = md5($password);
+
             //save data into database
             $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
             $statement = $conn->prepare($sql);
@@ -90,6 +93,8 @@
                 ':contact' => $contact,
                 ':address' => $address
             ]);
+
+            echo 'Data inserted';
 
         }
 
