@@ -21,7 +21,7 @@
             $errors['fullname'] = 'Fullname is required';
         }
         else{
-            $fullname = $_POST['fullname'];
+            $fullname = htmlspecialchars($_POST['fullname']);
         }
 
         //check if email is empty
@@ -29,7 +29,7 @@
             $errors['email'] = 'Email is required';
         }
         else{
-            $email = $_POST['email'];
+            $email = htmlspecialchars($_POST['email']);
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $errors['email'] = 'Please provide a valid email';
             }
@@ -75,7 +75,15 @@
             $address = $_POST['address'];
         }
 
-        // print_r($errors);
+        //check no more errors
+        if(!array_filter($errors)){
+
+            //save data into database
+            $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
+            $statement = $conn->prepare($sql);
+            $statement->execute([]);
+
+        }
 
     }
 
