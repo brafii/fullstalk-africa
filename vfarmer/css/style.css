@@ -128,3 +128,7 @@ input[type='text'], input[type='password']{
     background-color: #fff;
     margin-top: 60px;
 }
+
+.register-page #message{
+    display: none;
+}
