@@ -81,7 +81,15 @@
             //save data into database
             $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
             $statement = $conn->prepare($sql);
-            $statement->execute([]);
+            $statement->execute([
+                ':fullname' => $fullname,
+                ':email' => $email,
+                ':password' => $password,
+                ':country' => $country,
+                ':city' => $city,
+                ':contact' => $contact,
+                ':address' => $address
+            ]);
 
         }
 
