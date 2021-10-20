@@ -3,6 +3,17 @@
     //Connection to database
     require_once 'connection/db_connect.php';
 
+    //check errors
+    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
+
+    $fullname = '';
+    $email = '';
+    $password = '';
+    $country = '';
+    $city = '';
+    $contact = '';
+    $address = '';
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         
