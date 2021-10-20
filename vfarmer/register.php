@@ -94,7 +94,18 @@
                 ':address' => $address
             ]);
 
-            echo 'Data inserted';
+            $lastId = $conn->lastInsertId();
+
+            $sql = 'SELECT * FROM farmer WHERE id=:id';
+            $statement = $conn->prepare($sql);
+            $run = $statement->execute([':id' => $lastId]);
+            $user = $statement->fetch();
+
+            if($run){
+                $_SESSION['user'] = $user;
+                header('Location: dashboard.php');
+            }
+
 
         }
 
