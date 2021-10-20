@@ -127,7 +127,7 @@
                 <div class="mb-3">
                     <label class="form-label">Password</label>
                     <input type="password" id="password" class="form-control" name="password" placeholder="Password">
-                    <p  class="mt-1" id="message">Password is <span>weak</span> </p>
+                    <p  class="mt-1" id="message">Password is <span id="strength"></span> </p>
                     <div class="text-danger mt-1">
                         <?php echo $errors['password']; ?>
                     </div>
