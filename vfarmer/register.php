@@ -16,49 +16,59 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        if(empty($fullname)){
+        //check if firstname is empty
+        if(empty($_POST['fullname'])){
             $errors['fullname'] = 'Fullname is required';
         }
         else{
             $fullname = $_POST['fullname'];
         }
 
-        if(empty($email)){
+        //check if email is empty
+        if(empty($_POST['email'])){
             $errors['email'] = 'Email is required';
         }
         else{
             $email = $_POST['email'];
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $errors['email'] = 'Please provide a valid email';
+            }
         }
 
-        if(empty($password)){
+        //check if password is empty
+        if(empty($_POST['password'])){
             $errors['password'] = 'Password is required';
         }
         else{
             $password = $_POST['password'];
         }
 
-        if(empty($country)){
+        //check if country is empty
+        if(empty($_POST['country'])){
             $errors['country'] = 'Country is required';
         }
         else{
             $country = $_POST['country'];
         }
 
-        if(empty($city)){
+        //check if city is empty
+        if(empty($_POST['city'])){
             $errors['city'] = 'City is required';
         }
         else{
             $city = $_POST['city'];
         }
 
-        if(empty($contact)){
+        //check if contact is empty
+        if(empty($_POST['contact'])){
             $errors['contact'] = 'Contact is required';
         }
         else{
             $contact = $_POST['contact'];
         }
 
-        if(empty($address)){
+        //check if address is empty
+        if(empty($_POST['address'])){
             $errors['address'] = 'Address is required';
         }
         else{
@@ -100,37 +110,58 @@
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" name="fullname" placeholder="Full Name">
+                    <input type="text" class="form-control" name="fullname" placeholder="Fullname">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['fullname']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Email Address</label>
                     <input type="text" class="form-control" name="email" placeholder="Email">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['email']; ?>
+                    </div>
                 </div>
                 
                 <div class="mb-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" name="password" placeholder="Password">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['password']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Country</label>
                     <input type="text" class="form-control" name="country" placeholder="Country">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['country']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">City</label>
                     <input type="text" class="form-control" name="city" placeholder="City">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['city']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Contact</label>
                     <input type="text" class="form-control" name="contact" placeholder="Contact">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['contact']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label class="form-label">Address</label>
                     <input type="text" class="form-control" name="address" placeholder="Address">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['address']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 form-check">
