@@ -23,6 +23,48 @@
             $fullname = $_POST['fullname'];
         }
 
+        if(empty($email)){
+            $errors['email'] = 'Email is required';
+        }
+        else{
+            $email = $_POST['email'];
+        }
+
+        if(empty($password)){
+            $errors['password'] = 'Password is required';
+        }
+        else{
+            $password = $_POST['password'];
+        }
+
+        if(empty($country)){
+            $errors['country'] = 'Country is required';
+        }
+        else{
+            $country = $_POST['country'];
+        }
+
+        if(empty($city)){
+            $errors['city'] = 'City is required';
+        }
+        else{
+            $city = $_POST['city'];
+        }
+
+        if(empty($contact)){
+            $errors['contact'] = 'Contact is required';
+        }
+        else{
+            $contact = $_POST['contact'];
+        }
+
+        if(empty($address)){
+            $errors['address'] = 'Address is required';
+        }
+        else{
+            $address = $_POST['address'];
+        }
+
         print_r($errors);
 
     }
