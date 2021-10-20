@@ -65,7 +65,7 @@
             $address = $_POST['address'];
         }
 
-        print_r($errors);
+        // print_r($errors);
 
     }
 
