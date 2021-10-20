@@ -16,7 +16,14 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        
+        if(empty($fullname)){
+            $errors['fullname'] = 'Fullname is required';
+        }
+        else{
+            $fullname = $_POST['fullname'];
+        }
+
+        print_r($errors);
 
     }
 
