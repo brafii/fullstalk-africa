@@ -41,10 +41,7 @@
                   <img class="rounded-circle my-image" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">&nbsp; Mary Osei
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
               </ul>
             </li>
 

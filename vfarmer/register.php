@@ -78,36 +78,57 @@
         //check no more errors
         if(!array_filter($errors)){
 
-            //hash password
-            $password = md5($password);
-
-            //save data into database
-            $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
+            //check if email exiits
+            $sql = 'SELECT * FROM farmer WHERE email = :email LIMIT 1';
             $statement = $conn->prepare($sql);
             $statement->execute([
-                ':fullname' => $fullname,
                 ':email' => $email,
-                ':password' => $password,
-                ':country' => $country,
-                ':city' => $city,
-                ':contact' => $contact,
-                ':address' => $address
             ]);
+            if($statement->rowCount()){
+                $errors['email'] = 'Email already exists';
+            }
+            else{
 
-            $lastId = $conn->lastInsertId();
+                //hash password
+                $password = md5($password);
 
-            $sql = 'SELECT * FROM farmer WHERE id=:id';
-            $statement = $conn->prepare($sql);
-            $run = $statement->execute([':id' => $lastId]);
-            $user = $statement->fetch();
+                //save data into database
+                $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
+                $statement = $conn->prepare($sql);
+                $statement->execute([
+                    ':fullname' => $fullname,
+                    ':email' => $email,
+                    ':password' => $password,
+                    ':country' => $country,
+                    ':city' => $city,
+                    ':contact' => $contact,
+                    ':address' => $address
+                ]);
 
-            if($run){
-                $_SESSION['user'] = $user;
-                header('Location: dashboard.php');
+                $lastId = $conn->lastInsertId();
+
+                $sql = 'SELECT * FROM farmer WHERE id=:id';
+                $statement = $conn->prepare($sql);
+                $run = $statement->execute([':id' => $lastId]);
+                $user = $statement->fetch();
+
+                if($run){
+                    $_SESSION['user'] = $user;
+                    header('Location: dashboard.php');
+                }
+
+
             }
 
-
         }
+
+        // if(isset($_SESSION['user'])){
+
+        //     header('Location: dashboard.php');
+        //     //  $user = $_SESSION['user'];
+      
+        //     //  echo $user['fullname'];
+        //   }
 
     }
 

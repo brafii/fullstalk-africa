@@ -1,3 +1,17 @@
+<?php
+
+    //Connection to the database
+    require_once 'connection/db_connect.php';
+
+    if(isset($_SESSION['user'])){
+       $user = $_SESSION['user'];
+
+      //  echo $user['fullname'];
+    }
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,7 +36,7 @@
         <div class="container">
 
             <div class="display-name">
-                <h2>Good day, Farmer Fiifi Ofori!</h2>
+                <h2>Good day, Farmer <?php echo $user['fullname'] ?>!</h2>
                 <hr>
             </div>
 
