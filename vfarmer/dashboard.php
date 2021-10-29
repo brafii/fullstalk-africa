@@ -3,10 +3,21 @@
     //Connection to the database
     require_once 'connection/db_connect.php';
 
+    $user = '';
+
     if(isset($_SESSION['user'])){
        $user = $_SESSION['user'];
+    }else{
+      header('Location: login.php');
     }
 
+    //  //authenticate user
+    //  if(isset($_SESSION['user'])){
+    //   header('Location: dashboard.php');
+    // }
+
+
+   
 ?>
 
 

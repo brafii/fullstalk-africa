@@ -122,14 +122,10 @@
 
         }
 
-        // if(isset($_SESSION['user'])){
+    }
 
-        //     header('Location: dashboard.php');
-        //     //  $user = $_SESSION['user'];
-      
-        //     //  echo $user['fullname'];
-        //   }
-
+    if(isset($_SESSION['user'])){
+        header('Location: dashboard.php');
     }
 
 

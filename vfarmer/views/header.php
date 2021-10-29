@@ -1,3 +1,16 @@
+<?php
+
+  //Connection to the database
+  require_once 'connection/db_connect.php';
+
+  $user = '';
+
+  if(isset($_SESSION['user'])){
+     $user = $_SESSION['user'];
+  }
+
+?>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="dashboard.php">
@@ -38,7 +51,7 @@
             
             <li class="nav-item dropdown imagedropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="rounded-circle my-image" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">&nbsp; Mary Osei
+                  <img class="rounded-circle my-image" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">&nbsp; <?php echo $user['fullname'] ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
