@@ -4,8 +4,9 @@
     require_once 'connection/db_connect.php';
 
     //check errors
-    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
+    $errors = ['profile' => '', 'fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => '', 'terms'=> ''];
 
+    $profile = '';
     $fullname = '';
     $email = '';
     $password = '';
@@ -13,8 +14,15 @@
     $city = '';
     $contact = '';
     $address = '';
+    $terms = '';
+
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        //check if file upload is empty
+        if(empty($_POST['profile'])){
+            $errors['profile'] = 'Please upload and image';
+        }
 
         //check if firstname is empty
         if(empty($_POST['fullname'])){
@@ -75,8 +83,17 @@
             $address = $_POST['address'];
         }
 
+        //check if terms is not checked
+        if(empty($_POST['terms'])){
+            $errors['terms'] = 'Terms and Policy is required';
+        }
+        else{
+            $terms = $_POST['terms'];
+        }
+
         //check no more errors
         if(!array_filter($errors)){
+
 
             //check if email exiits
             $sql = 'SELECT * FROM farmer WHERE email = :email LIMIT 1';
@@ -89,13 +106,29 @@
             }
             else{
 
+                if(!is_dir('profileimages')){
+                    mkdir('profileimages');
+                }
+
+                $profile = $_FILES['profile'] ?? null;
+                $profilePath = '';
+                if($profile){
+
+                    $profilePath = 'profileimages/'.randomString(8).'/'.$profile['name'];
+                    mkdir(dirname($profilePath));
+
+                    move_uploaded_file($profile['tmp_name'], $profilePath);
+                }
+                exit;
+
                 //hash password
                 $password = md5($password);
 
                 //save data into database
-                $sql = 'INSERT INTO farmer (fullname, email, password, country, city, contact, address) VALUE(:fullname, :email, :password, :country, :city, :contact, :address)';
+                $sql = 'INSERT INTO farmer (profile, fullname, email, password, country, city, contact, address) VALUE(:profile, :fullname, :email, :password, :country, :city, :contact, :address, :terms)';
                 $statement = $conn->prepare($sql);
                 $statement->execute([
+                    ':profile' => $profilePath,
                     ':fullname' => $fullname,
                     ':email' => $email,
                     ':password' => $password,
@@ -128,6 +161,20 @@
         header('Location: dashboard.php');
     }
 
+    function randomString($n){
+
+        $character = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $str = '';
+
+        for($i = 0; $i < $n; $i++){
+            $index = rand(0, strlen($character) - 1);
+            $str .= $character[$index];
+        }
+
+        return $str;
+
+    }
+
 
 ?>
 
@@ -150,11 +197,15 @@
     <div class="register-page">
         <div class="container p-5">
             <img src="images/logo.png" class="img-fluid">
-            <form action="register.php" method="POST">
+
+            <form action="register.php" method="POST" enctype="multipart/form-data">
                 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
                     <input class="form-control" name="profile" type="file" id="formFile">
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['profile']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
@@ -217,6 +268,9 @@
                 <div class="mb-3 form-check">
                     <input type="checkbox" name="terms" class="form-check-input">
                     <label class="form-check-label">Agree the terms and policy</label>
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['terms']; ?>
+                    </div>
                 </div>
                 
                 <button type="submit" class="btn btn-primary myRegister-button">Register</button>
