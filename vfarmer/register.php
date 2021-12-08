@@ -110,8 +110,6 @@
                     $imagePath = 'profileimages/'.randomString(8).'/'.$image['name'];
                     mkdir(dirname($imagePath));
 
-                    //$profilePath
-
                     move_uploaded_file($image['tmp_name'], $imagePath);
                 }
 
