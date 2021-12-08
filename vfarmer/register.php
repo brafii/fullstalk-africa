@@ -4,7 +4,7 @@
     require_once 'connection/db_connect.php';
 
     //check errors
-    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
+    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => '', 'terms' => ''];
 
     $fullname = '';
     $email = '';
@@ -13,6 +13,7 @@
     $city = '';
     $contact = '';
     $address = '';
+    $terms = '';
 
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -76,6 +77,14 @@
             $address = $_POST['address'];
         }
 
+        //check if terms is empty
+        if(empty($_POST['terms'])){
+            $errors['terms'] = 'Terms is required';
+        }
+        else{
+            $address = $_POST['terms'];
+        }
+
 
         //check no more errors
         if(!array_filter($errors)){
@@ -110,7 +119,7 @@
                 $password = md5($password);
 
                 //save data into database
-                $sql = 'INSERT INTO farmer (image, fullname, email, password, country, city, contact, address) VALUE(:image, :fullname, :email, :password, :country, :city, :contact, :address)';
+                $sql = 'INSERT INTO farmer (image, fullname, email, password, country, city, contact, address, terms) VALUE(:image, :fullname, :email, :password, :country, :city, :contact, :address, :terms)';
                 $statement = $conn->prepare($sql);
                 $statement->execute([
                     ':image' => $imagePath,
@@ -121,6 +130,7 @@
                     ':city' => $city,
                     ':contact' => $contact,
                     ':address' => $address,
+                    ':terms' => $terms
                 ]);
 
                 $lastId = $conn->lastInsertId();
@@ -248,8 +258,11 @@
                 </div>
 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" name="terms" class="form-check-input">
+                    <input type="checkbox" name="terms" value="Agreed" class="form-check-input">
                     <label class="form-check-label">Agree the terms and policy</label>
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['terms']; ?>
+                    </div>
                 </div>
                 
                 <button type="submit" class="btn btn-primary myRegister-button">Register</button>
