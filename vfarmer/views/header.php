@@ -51,7 +51,7 @@
             
             <li class="nav-item dropdown imagedropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="rounded-circle my-image" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">&nbsp; <?php echo $user['fullname'] ?>
+              <?php echo $user['image'] ?>&nbsp; <?php echo $user['fullname'] ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
