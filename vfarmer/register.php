@@ -4,9 +4,9 @@
     require_once 'connection/db_connect.php';
 
     //check errors
-    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
+    $errors = ['image' => '', 'fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
 
-    
+    $image = '';
     $fullname = '';
     $email = '';
     $password = '';
@@ -18,7 +18,13 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        
+        //check if image is empty
+        if(empty($_POST['image'])){
+            $errors['image'] = 'Image is required';
+        }
+        else{
+            $image = $_POST['image'];
+        }
 
         //check if firstname is empty
         if(empty($_POST['fullname'])){
@@ -191,7 +197,9 @@
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
                     <input class="form-control" name="image" type="file" id="formFile">
-                    
+                    <div class="text-danger mt-1">
+                        <?php echo $errors['image']; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3 mt-3">
