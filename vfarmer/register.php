@@ -4,9 +4,9 @@
     require_once 'connection/db_connect.php';
 
     //check errors
-    $errors = ['profile' => '', 'fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => '', 'terms'=> ''];
+    $errors = ['fullname' => '', 'email' => '', 'password' => '', 'country' => '', 'city' => '', 'contact' => '', 'address' => ''];
 
-    $profile = '';
+    
     $fullname = '';
     $email = '';
     $password = '';
@@ -14,15 +14,11 @@
     $city = '';
     $contact = '';
     $address = '';
-    $terms = '';
 
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        //check if file upload is empty
-        if(empty($_POST['profile'])){
-            $errors['profile'] = 'Please upload and image';
-        }
+        
 
         //check if firstname is empty
         if(empty($_POST['fullname'])){
@@ -83,13 +79,6 @@
             $address = $_POST['address'];
         }
 
-        // //check if terms is not checked
-        // if(empty($_POST['terms'])){
-        //     $errors['terms'] = 'Terms and Policy is required';
-        // }
-        // else{
-        //     $terms = $_POST['terms'];
-        // }
 
         //check no more errors
         if(!array_filter($errors)){
@@ -125,7 +114,7 @@
                 $password = md5($password);
 
                 //save data into database
-                $sql = 'INSERT INTO farmer (profile, fullname, email, password, country, city, contact, address) VALUE(:profile, :fullname, :email, :password, :country, :city, :contact, :address, :terms)';
+                $sql = 'INSERT INTO farmer (profile, fullname, email, password, country, city, contact, address) VALUE(:profile, :fullname, :email, :password, :country, :city, :contact, :address)';
                 $statement = $conn->prepare($sql);
                 $statement->execute([
                     ':profile' => $profilePath,
@@ -136,7 +125,6 @@
                     ':city' => $city,
                     ':contact' => $contact,
                     ':address' => $address,
-                    ':terms' => $terms
                 ]);
 
                 $lastId = $conn->lastInsertId();
@@ -199,7 +187,7 @@
         <div class="container p-5">
             <img src="images/logo.png" class="img-fluid">
 
-            <form action="register.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
