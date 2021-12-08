@@ -5,6 +5,4 @@ Frontend: HTML/CSS, Bootstrap, Javascript <br>
 Backend: PHP <br>
 Database: MYSQL
 
-Link to original Website: https://vfarmer.fullstalk.africa/index.html <br>
-
-The project is still in progress im not done yet
+Link to original Website: https://vfarmer.fullstalk.africa/index.html
