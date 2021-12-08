@@ -15,6 +15,10 @@
     $contact = '';
     $address = '';
 
+    echo '<pre>';
+    var_dump($_FILES);
+    echo '</pre>';
+
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -95,29 +99,30 @@
             }
             else{
 
-                // if(!is_dir('profileimages')){
-                //     mkdir('profileimages');
-                // }
+                if(!is_dir('profileimages')){
+                    mkdir('profileimages');
+                }
 
-                // $profile = $_FILES['profile'] ?? null;
-                // $profilePath = '';
-                // if($profile){
+                $image = $_FILES['image'] ?? null;
+                $imagePath = '';
+                if($image){
 
-                //     $profilePath = 'profileimages/'.randomString(8).'/'.$profile['name'];
-                //     mkdir(dirname($profilePath));
+                    $imagePath = 'profileimages/'.randomString(8).'/'.$image['name'];
+                    mkdir(dirname($imagePath));
 
-                //     move_uploaded_file($profile['tmp_name'], $profilePath);
-                // }
-                // exit;
+                    //$profilePath
+
+                    move_uploaded_file($image['tmp_name'], $imagePath);
+                }
 
                 //hash password
                 $password = md5($password);
 
                 //save data into database
-                $sql = 'INSERT INTO farmer (profile, fullname, email, password, country, city, contact, address) VALUE(:profile, :fullname, :email, :password, :country, :city, :contact, :address)';
+                $sql = 'INSERT INTO farmer (image, fullname, email, password, country, city, contact, address) VALUE(:image, :fullname, :email, :password, :country, :city, :contact, :address)';
                 $statement = $conn->prepare($sql);
                 $statement->execute([
-                    ':profile' => $profilePath,
+                    ':image' => $imagePath,
                     ':fullname' => $fullname,
                     ':email' => $email,
                     ':password' => $password,
@@ -150,19 +155,19 @@
         header('Location: dashboard.php');
     }
 
-    // function randomString($n){
+    function randomString($n){
 
-    //     $character = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    //     $str = '';
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $str = '';
 
-    //     for($i = 0; $i < $n; $i++){
-    //         $index = rand(0, strlen($character) - 1);
-    //         $str .= $character[$index];
-    //     }
+        for($i = 0; $i < $n; $i++){
+            $index = rand(0, strlen($characters) - 1);
+            $str .= $characters[$index];
+        }
 
-    //     return $str;
+        return $str;
 
-    // }
+    }
 
 
 ?>
@@ -191,7 +196,7 @@
                 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
-                    <input class="form-control" name="profile" type="file" id="formFile">
+                    <input class="form-control" name="image" type="file" id="formFile">
                     
                 </div>
 
