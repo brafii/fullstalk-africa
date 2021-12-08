@@ -101,7 +101,7 @@
 
                 $image = $_FILES['image'] ?? null;
                 $imagePath = '';
-                if($image){
+                if($image && $image['tmp_name']){
 
                     $imagePath = 'profileimages/'.randomString(8).'/'.$image['name'];
                     mkdir(dirname($imagePath));

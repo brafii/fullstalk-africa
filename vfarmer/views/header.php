@@ -51,7 +51,7 @@
             
             <li class="nav-item dropdown imagedropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $user['image'] ?>&nbsp; <?php echo $user['fullname'] ?>
+                  <img class="rounded-circle my-image" alt="100x100" src="<?php echo $user['image'] ?>">&nbsp;<?php echo $user['fullname'] ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
