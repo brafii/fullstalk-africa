@@ -83,13 +83,13 @@
             $address = $_POST['address'];
         }
 
-        //check if terms is not checked
-        if(empty($_POST['terms'])){
-            $errors['terms'] = 'Terms and Policy is required';
-        }
-        else{
-            $terms = $_POST['terms'];
-        }
+        // //check if terms is not checked
+        // if(empty($_POST['terms'])){
+        //     $errors['terms'] = 'Terms and Policy is required';
+        // }
+        // else{
+        //     $terms = $_POST['terms'];
+        // }
 
         //check no more errors
         if(!array_filter($errors)){
@@ -106,20 +106,20 @@
             }
             else{
 
-                if(!is_dir('profileimages')){
-                    mkdir('profileimages');
-                }
+                // if(!is_dir('profileimages')){
+                //     mkdir('profileimages');
+                // }
 
-                $profile = $_FILES['profile'] ?? null;
-                $profilePath = '';
-                if($profile){
+                // $profile = $_FILES['profile'] ?? null;
+                // $profilePath = '';
+                // if($profile){
 
-                    $profilePath = 'profileimages/'.randomString(8).'/'.$profile['name'];
-                    mkdir(dirname($profilePath));
+                //     $profilePath = 'profileimages/'.randomString(8).'/'.$profile['name'];
+                //     mkdir(dirname($profilePath));
 
-                    move_uploaded_file($profile['tmp_name'], $profilePath);
-                }
-                exit;
+                //     move_uploaded_file($profile['tmp_name'], $profilePath);
+                // }
+                // exit;
 
                 //hash password
                 $password = md5($password);
@@ -135,7 +135,8 @@
                     ':country' => $country,
                     ':city' => $city,
                     ':contact' => $contact,
-                    ':address' => $address
+                    ':address' => $address,
+                    ':terms' => $terms
                 ]);
 
                 $lastId = $conn->lastInsertId();
@@ -161,19 +162,19 @@
         header('Location: dashboard.php');
     }
 
-    function randomString($n){
+    // function randomString($n){
 
-        $character = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $str = '';
+    //     $character = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //     $str = '';
 
-        for($i = 0; $i < $n; $i++){
-            $index = rand(0, strlen($character) - 1);
-            $str .= $character[$index];
-        }
+    //     for($i = 0; $i < $n; $i++){
+    //         $index = rand(0, strlen($character) - 1);
+    //         $str .= $character[$index];
+    //     }
 
-        return $str;
+    //     return $str;
 
-    }
+    // }
 
 
 ?>
@@ -203,9 +204,7 @@
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile</label>
                     <input class="form-control" name="profile" type="file" id="formFile">
-                    <div class="text-danger mt-1">
-                        <?php echo $errors['profile']; ?>
-                    </div>
+                    
                 </div>
 
                 <div class="mb-3 mt-3">
@@ -268,9 +267,6 @@
                 <div class="mb-3 form-check">
                     <input type="checkbox" name="terms" class="form-check-input">
                     <label class="form-check-label">Agree the terms and policy</label>
-                    <div class="text-danger mt-1">
-                        <?php echo $errors['terms']; ?>
-                    </div>
                 </div>
                 
                 <button type="submit" class="btn btn-primary myRegister-button">Register</button>
